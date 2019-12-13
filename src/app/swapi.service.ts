@@ -7,5 +7,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SwapiService {
 
-  constructor(private httpClient: HttpClient) { }
+	constructor(private httpClient: HttpClient) { }
+
+	getPlanets() {
+		const observablePlanets = this.httpClient.get("https://swapi.co/api/planets");
+
+		return observablePlanets;
+	}
+
 }
